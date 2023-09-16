@@ -1,2 +1,4 @@
-# Printf project
-# First team project in ALX
+# C - Printf project.
+
+This is our first project as a team in ALX.
+
