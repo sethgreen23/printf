@@ -16,7 +16,7 @@ int _strlen(char *s)
 }
 /**
  * print_s - print string
- * @s: string to print
+ * @str: string to print
  *
  * Return: length of string
  */
