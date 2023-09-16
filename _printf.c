@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	int printed;
 	va_list lst;
-	char character;
+	int character;
 
 	printed = 0;
 	va_start(lst, format);
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				character = var_arg(lst, int);
+				character = va_arg(lst, int);
 				write(1, &character, 1);
 				printed++;
 			}
