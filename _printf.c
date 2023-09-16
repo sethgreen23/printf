@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 			else if (*format == 'c')
 			{
 				character = va_arg(lst, int);
+				if (character == NULL)
+					return (-1)g
 				write(1, &character, 1);
 				printed++;
 			}
