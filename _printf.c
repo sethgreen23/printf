@@ -16,7 +16,7 @@ int choose_func(char ch, va_list lst)
 	else if (ch == 'c')
 		printed = print_char(lst);
 	else if (ch == 's')
-		printed = print_s(va_arg(lst, int *));
+		printed = print_s(va_arg(lst, char *));
 	else
 		printed = print_ns(ch);
 	return (printed);
