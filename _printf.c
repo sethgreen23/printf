@@ -17,6 +17,11 @@ int choose_func(char ch, va_list lst)
 		printed = print_char(lst);
 	else if (ch == 's')
 		printed = print_s(va_arg(lst, char *));
+	else if (ch == 'b')
+	{
+		n = va_arg(lst, int);
+		printed = print_b(n);
+	}
 	else if (ch == 'd' || ch == 'i')
 	{
 		n = va_arg(lst, int);
