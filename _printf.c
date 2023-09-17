@@ -9,7 +9,7 @@
  */
 int choose_func(char ch, va_list lst)
 {
-	int printed = 0;
+	int n, printed = 0;
 
 	if (ch == '%')
 		printed = print_percent(1);
@@ -17,6 +17,11 @@ int choose_func(char ch, va_list lst)
 		printed = print_char(lst);
 	else if (ch == 's')
 		printed = print_s(va_arg(lst, char *));
+	else if (ch == 'd' || ch == 'i')
+	{
+		n = va_arg(lst, int);
+		printed = print_d(n);
+	}
 	else
 		printed = print_ns(ch);
 	return (printed);
