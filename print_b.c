@@ -5,13 +5,11 @@
  *
  * Return: binary number
  */
-int print_b(int n)
+int print_b(unsigned int n)
 {
 	int i, count, j, temp;
 	char buffer[100];
 
-	if (n < 0)
-		return (-1);
 	i = 0, count = 0;
 	do {
 		buffer[i++] = n % 2 + '0';

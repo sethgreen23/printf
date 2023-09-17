@@ -8,21 +8,15 @@ int main(void)
 {
 	int n;
 
-	n = _printf("Hello world");
-	printf("[length: %d]\n", n);
-	n = _printf("%c love coding", 'I');
-	printf("[length: %d]\n", n);
-	n = _printf("%s is great", "coding");
-	printf("[length: %d]\n", n);
-	n = _printf("%b\n", 5);
-	printf("[length: %d]\n", n);
 	n = _printf("%b\n", 0);
 	printf("[length: %d]\n", n);
-	n = _printf("%b\n", 98);
+	n = _printf("%b\n", 100);
 	printf("[length: %d]\n", n);
-	n = _printf("%b\n", 124);
+	n = _printf("%b\n", 2);
 	printf("[length: %d]\n", n);
-	n = printf("%b\n", -5);
+	n = printf("%b\n", -100);
+	printf("[length: %d]\n", n);
+	n = _printf("%b\n", -100);
 	printf("[length: %d]\n", n);
 	return (0);
 }

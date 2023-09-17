@@ -19,7 +19,7 @@ int choose_func(char ch, va_list lst)
 		printed = print_s(va_arg(lst, char *));
 	else if (ch == 'b')
 	{
-		n = va_arg(lst, int);
+		n = va_arg(lst, unsigned int);
 		printed = print_b(n);
 	}
 	else if (ch == 'd' || ch == 'i')
