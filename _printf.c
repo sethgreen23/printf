@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 
 	printed = 0;
 	va_start(lst, format);
-	if (format == NULL)
+	if (format == NULL || *format == '\0')
 		return (-1);
 	while (*format)
 	{
@@ -39,9 +39,7 @@ int _printf(const char *format, ...)
 				printed++;
 			}
 			else if (*format == 's')
-			{
 				printed += print_s(va_arg(lst, char *));
-			}
 			else
 			{
 				write(1, "%%", 1);
