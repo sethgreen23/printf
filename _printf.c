@@ -1,4 +1,27 @@
 #include "main.h"
+
+/**
+ * choose_func - choose the specifier
+ * @ch: specifier
+ * @lst: list of arguments
+ *
+ * Return: Number of characters printed
+ */
+int choose_func(char ch, va_list lst)
+{
+	int printed = 0;
+
+	if (ch == '%')
+		printed = print_percent(1);
+	else if (char == 'c')
+		printed = print_char(lst);
+	else if (ch == 's')
+		printed = print_s(va_arg(lst, int *));
+	else
+		printed = print_ns(ch);
+	return (printed);
+}
+
 /**
  * _printf - printf function
  * @format: format string
@@ -25,27 +48,11 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (*format == '\0')
+			len = 0;
+			len = choose_func(*format, lst);
+			if (len < 0)
 				return (-1);
-			if (*format == '%')
-			{
-				write(1, format, 1);
-				printed++;
-			}
-			else if (*format == 'c')
-			{
-				character = va_arg(lst, int);
-				write(1, &character, 1);
-				printed++;
-			}
-			else if (*format == 's')
-				printed += print_s(va_arg(lst, char *));
-			else
-			{
-				write(1, "%%", 1);
-				write(1, format, 1);
-				printed += 2;
-			}
+			printed += len;
 		}
 	}
 	va_end(lst);
