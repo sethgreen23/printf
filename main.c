@@ -22,7 +22,7 @@ int main(void)
 	printf("[length: %d]\n", n);
 	n = _printf("%b\n", 124);
 	printf("[length: %d]\n", n);
-	n = _printf("%b\n", 25);
+	n = printf("%b\n", -5);
 	printf("[length: %d]\n", n);
 	return (0);
 }

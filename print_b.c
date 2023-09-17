@@ -8,8 +8,10 @@
 int print_b(int n)
 {
 	int i, count, j, temp;
-	char buffer[32];
+	char buffer[100];
 
+	if (n < 0)
+		return (-1);
 	i = 0, count = 0;
 	do {
 		buffer[i++] = n % 2 + '0';
