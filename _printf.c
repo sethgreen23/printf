@@ -13,7 +13,7 @@ int choose_func(char ch, va_list lst)
 
 	if (ch == '%')
 		printed = print_percent(1);
-	else if (char == 'c')
+	else if (ch == 'c')
 		printed = print_char(lst);
 	else if (ch == 's')
 		printed = print_s(va_arg(lst, int *));
