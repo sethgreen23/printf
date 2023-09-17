@@ -40,6 +40,12 @@ int _printf(const char *format, ...)
 			{
 				printed += print_s(va_arg(lst, char *));
 			}
+			else
+			{
+				write(1, "%%", 1);
+				write(1, format, 1);
+				printed += 2;
+			}
 		}
 		format++;
 	}
