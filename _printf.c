@@ -30,9 +30,8 @@ int choose_func(char ch, va_list lst)
  */
 int _printf(const char *format, ...)
 {
-	int printed;
+	int printed, len;
 	va_list lst;
-	char character;
 
 	printed = 0;
 	va_start(lst, format);
