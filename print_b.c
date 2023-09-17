@@ -7,7 +7,7 @@
  */
 int print_b(int n)
 {
-	int i, count, j, temp, zero_pad;
+	int i, count, j, temp;
 	char buffer[32];
 
 	i = 0, count = 0;
