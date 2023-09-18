@@ -14,8 +14,6 @@ int main(void)
 	printf("[length: %d]\n", n);
 	n = _printf("%b\n", 2);
 	printf("[length: %d]\n", n);
-	n = printf("%b\n", -100);
-	printf("[length: %d]\n", n);
 	n = _printf("%b\n", -100);
 	printf("[length: %d]\n", n);
 	n = _printf("%x\n", 0);

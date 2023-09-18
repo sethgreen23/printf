@@ -44,7 +44,7 @@ unsigned int print_u(int n)
 	char buffer[32];
 
 	i = 0;
-	(n < 0)
+	if (n < 0)
 		value = maxValue + n + 1;
 	else if (n >= 0)
 		value = n;
