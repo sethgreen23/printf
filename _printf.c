@@ -32,7 +32,7 @@ int choose_func(char ch, va_list lst)
 		n = va_arg(lst, int);
 		printed = print_o(n);
 	}
-	else if (ch = 'u')
+	else if (ch == 'u')
 	{
 		n = va_arg(lst, int);
 		printed = print_u(n);
