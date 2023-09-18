@@ -17,4 +17,8 @@ int choose_func(char ch, va_list lst);
 int print_percent(int num);
 int print_ns(char ch);
 int print_char(va_list lst);
+int print_o(unsigned int n);
+unsigned int print_u(int n);
+int print_hexa(unsigned int n, char x);
+char print_hc(int n, char x);
 #endif
