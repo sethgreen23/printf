@@ -38,13 +38,11 @@ int choose_func(char ch, va_list lst)
 		printed = print_u(n);
 	}
 	else if (ch == 'x' || ch == 'X')
-	{
 		printed = print_hexa(lst, ch);
-	}
 	else if (ch == 'r')
-	{
 		printed = print_r(lst);
-	}
+	else if (ch == 'R')
+		printed = print_R(lst);
 	else
 		printed = print_ns(ch);
 	return (printed);
