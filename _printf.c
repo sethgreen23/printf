@@ -38,10 +38,6 @@ int choose_func(char ch, va_list lst, char *buffer, int *index)
 		n = va_arg(lst, int);
 		printed = print_u(n, buffer, index);
 	}
-	else if (ch == 'S')
-	{
-		printed = print_S(lst, buffer, index);
-	}
 	else if (ch == 'x' || ch == 'X')
 	{
 		n = va_arg(lst, int);
