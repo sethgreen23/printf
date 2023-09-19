@@ -27,7 +27,7 @@ int print_S(va_list lst)
 				write(1, &zero, 1);
 				len++;
 			}
-			len += print_hexa(*str, 'X');
+			len += print_hexa(lst, 'X');
 		}
 		else
 		{
