@@ -26,4 +26,8 @@ int main(void)
     return (0);
 }
 ```
-
+## Teck stack:
+**Server:** C
+## Contributing
+Contributions are always welcome!
+Please adhere to this project's `code of conduct`.
