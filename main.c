@@ -30,6 +30,7 @@ int main(void)
 	printf("%d [length: %d]\n", INT_MIN, n);
 	n = _printf("%X\n", INT_MIN);
 	printf("%d [length: %d]\n", INT_MIN, n);
-	_printf("%S\n", "Best\nSchool");
+	n = printf("%S", "");
+	printf("\n%d", n);
 	return (0);
 }
