@@ -18,7 +18,7 @@ int print_S(va_list lst)
 	}
 	for (; *str != '\0'; str++)
 	{
-		if ((*str > 0 && *str < 32) || (*str >= 127))
+		if ((*str >= 0 && *str < 32) || (*str >= 127))
 		{
 			write(1, "\\x", 2);
 			len += 2;
