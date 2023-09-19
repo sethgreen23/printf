@@ -37,14 +37,14 @@ int choose_func(char ch, va_list lst)
 		n = va_arg(lst, int);
 		printed = print_u(n);
 	}
-	else if (ch == 'S')
-	{
-		printed = print_S(lst);
-	}
 	else if (ch == 'x' || ch == 'X')
 	{
 		n = va_arg(lst, int);
 		printed = print_hexa(n, ch);
+	}
+	else if (ch == 'r')
+	{
+		printed = print_r(lst);
 	}
 	else
 		printed = print_ns(ch);
