@@ -85,7 +85,7 @@ int _printf(const char *format, ...)
 			printed += len;
 		}
 	}
-	if (index >= 0)
+	if (index > 0)
 		print_buffer(buffer, &index);
 	free(buffer);
 	va_end(lst);
