@@ -13,7 +13,7 @@ int print_S(va_list lst)
 
 	if (str == NULL)
 	{
-		write(1, ("null"), 1);
+		write(1, "(null)", 1);
 		return (6);
 	}
 	for (; *str != '\0'; str++)
