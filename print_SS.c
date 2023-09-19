@@ -12,10 +12,7 @@ int print_S(va_list lst)
 	int len = 0;
 
 	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
+		return (0);
 	for (; *str != '\0'; str++)
 	{
 		if (*str < 32 || (*str >= 127))
