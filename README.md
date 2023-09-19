@@ -28,3 +28,4 @@ int main(void)
 ```
 ## Teck stack:
 **Server:** C
+## Contributing
