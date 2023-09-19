@@ -2,6 +2,7 @@
 /**
  * _strlen - count the length of the string
  * @s: string to count
+ *
  * Return: length of the string
  */
 int _strlen(char *s)
@@ -16,21 +17,20 @@ int _strlen(char *s)
 /**
  * print_s - print string
  * @str: string to print
- * @buffer: buffer
- * @index: index
+ *
  * Return: length of string
  */
-int print_s(char *str, char *buffer, int *index)
+int print_s(char *str)
 {
 	int len;
-	char *nullStr = "(null)";
 
 	if (str == NULL)
 	{
-		store_string(buffer, index, nullStr);
+		write(1, "(null)", 6);
 		return (6);
 	}
 	len = _strlen(str);
-	store_string(buffer, index, str);
+	for (; *str != '\0'; str++)
+		write(1, str, 1);
 	return (len);
 }

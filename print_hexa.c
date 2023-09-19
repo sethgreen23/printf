@@ -1,9 +1,9 @@
 #include "main.h"
-
 /**
  * print_hc - print the hexa characters
  * @n: number to be converted to hexa
  * @x: specifier
+ *
  * Return: the converted hexa
  */
 char print_hc(int n, char x)
@@ -22,11 +22,10 @@ char print_hc(int n, char x)
  * print_hexa - print hexadecimal number
  * @n: unsigned decimal number
  * @x: The specifier
- * @global_buffer: buffer
- * @index: index
+ *
  * Return: count
  */
-int print_hexa(unsigned int n, char x, char *global_buffer, int *index)
+int print_hexa(unsigned int n, char x)
 {
 	int i, count, j, temp;
 	char buffer[100];
@@ -49,7 +48,7 @@ int print_hexa(unsigned int n, char x, char *global_buffer, int *index)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		store_character(global_buffer, index, buffer[j]);
+		write(1, &buffer[j], 1);
 	}
 	return (count);
 }

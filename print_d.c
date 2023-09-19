@@ -2,11 +2,10 @@
 /**
  * print_d - print a decimal number
  * @n: number ot convert
- * @global_buffer: buffer
- * @index: index
+ *
  * Return: number length
  */
-int print_d(int n, char *global_buffer, int *index)
+int print_d(int n)
 {
 	int isNegative, i, count, j, temp;
 	char buffer[32];
@@ -41,7 +40,7 @@ int print_d(int n, char *global_buffer, int *index)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		store_character(global_buffer, index, buffer[j]);
+		write(1, &buffer[j], 1);
 	}
 	return (count);
 }

@@ -2,48 +2,44 @@
 
 /**
  * print_percent - print percent character
- * @buffer: buffer
- * @index: index
+ * @num: one
  * Return: 1
  */
-int print_percent(char *buffer, int *index)
+int print_percent(int num)
 {
-	store_character(buffer, index, '%');
-	return (1);
+	char ch = '%';
+
+	write(1, &ch, num);
+	return (num);
 }
 
 /**
  * print_char - print character
  * @lst: argument
- * @buffer: buffer
- * @index: index
+ *
  * Return: 1
  */
-int print_char(va_list lst, char *buffer, int *index)
+int print_char(va_list lst)
 {
 	char character = va_arg(lst, int);
 
-	store_character(buffer, index, character);
+	write(1, &character, 1);
 	return (1);
 }
 
 /**
  * print_ns - print unknown specifiers
  * @ch: character
- * @buffer: buffer
- * @index: index
+ *
  * Return: 2 or -1
  */
-int print_ns(char ch, char *buffer, int *index)
+int print_ns(char ch)
 {
 	char character = '%';
 
 	if (ch == '\0')
-	{
-		print_buffer(buffer, index);
 		return (-1);
-	}
-	store_character(buffer, index, character);
-	store_character(buffer, index, ch);
+	write(1, &character, 1);
+	write(1, &ch, 1);
 	return (2);
 }

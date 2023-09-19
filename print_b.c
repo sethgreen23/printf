@@ -2,11 +2,10 @@
 /**
  * print_b - print binary
  * @n: integer
- * @global_buffer: buffer
- * @index: index
+ *
  * Return: binary number
  */
-int print_b(unsigned int n, char *global_buffer, int *index)
+int print_b(unsigned int n)
 {
 	int i, count, j, temp;
 	char buffer[100];
@@ -26,7 +25,7 @@ int print_b(unsigned int n, char *global_buffer, int *index)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		store_character(global_buffer, index, buffer[j]);
+		write(1, &buffer[j], 1);
 	}
 	return (count);
 }

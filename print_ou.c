@@ -1,13 +1,11 @@
 #include "main.h"
-
 /**
- * print_o - pirnt octal number
+ * print_o - print octal number
  * @n: Unsigned decimal
- * @global_buffer: buffer
- * @index: index
+ *
  * Return: count
  */
-int print_o(unsigned int n, char *global_buffer, int *index)
+int print_o(unsigned int n)
 {
 	int i, count, j, temp;
 	char buffer[100];
@@ -27,7 +25,7 @@ int print_o(unsigned int n, char *global_buffer, int *index)
 	}
 	for (j = 0; buffer[j] != '\0'; j++)
 	{
-		store_character(global_buffer, index, buffer[j]);
+		write(1, &buffer[j], 1);
 	}
 	return (count);
 }
@@ -35,11 +33,10 @@ int print_o(unsigned int n, char *global_buffer, int *index)
 /**
  * print_u - print unsigned number
  * @n: decimal number
- * @global_buffer: buffer
- * @index: index
+ *
  * Return: number of digits
- **/
-unsigned int print_u(int n, char *global_buffer, int *index)
+ */
+unsigned int print_u(int n)
 {
 	unsigned int maxValue = 4294967295;
 	unsigned int value;
@@ -55,16 +52,13 @@ unsigned int print_u(int n, char *global_buffer, int *index)
 		buffer[i++] = value % 10 + '0';
 		value = value / 10;
 	} while (value > 0);
-	buffer[i] = '\0';
-	/*printf("%s\n", buffer);*/
 	for (j = 0; j < i / 2; j++)
 	{
 		temp = buffer[i - j - 1];
 		buffer[i - j - 1] = buffer[j];
 		buffer[j] = temp;
 	}
-	/*printf("\n");*/
 	for (j = 0; j < i; j++)
-		store_character(global_buffer, index, buffer[j]);
+		write(1, &buffer[j], 1);
 	return (i);
 }

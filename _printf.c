@@ -4,47 +4,46 @@
  * choose_func - choose the specifier
  * @ch: specifier
  * @lst: list of arguments
- * @buffer: buffer
- * @index: index
+ *
  * Return: Number of characters printed
  */
-int choose_func(char ch, va_list lst, char *buffer, int *index)
+int choose_func(char ch, va_list lst)
 {
 	int n, printed = 0;
 
 	if (ch == '%')
-		printed = print_percent(buffer, index);
+		printed = print_percent(1);
 	else if (ch == 'c')
-		printed = print_char(lst, buffer, index);
+		printed = print_char(lst);
 	else if (ch == 's')
-		printed = print_s(va_arg(lst, char *), buffer, index);
+		printed = print_s(va_arg(lst, char *));
 	else if (ch == 'b')
 	{
 		n = va_arg(lst, unsigned int);
-		printed = print_b(n, buffer, index);
+		printed = print_b(n);
 	}
 	else if (ch == 'd' || ch == 'i')
 	{
 		n = va_arg(lst, int);
-		printed = print_d(n, buffer, index);
+		printed = print_d(n);
 	}
 	else if (ch == 'o')
 	{
 		n = va_arg(lst, int);
-		printed = print_o(n, buffer, index);
+		printed = print_o(n);
 	}
 	else if (ch == 'u')
 	{
 		n = va_arg(lst, int);
-		printed = print_u(n, buffer, index);
+		printed = print_u(n);
 	}
 	else if (ch == 'x' || ch == 'X')
 	{
 		n = va_arg(lst, int);
-		printed = print_hexa(n, ch, buffer, index);
+		printed = print_hexa(n, ch);
 	}
 	else
-		printed = print_ns(ch, buffer, index);
+		printed = print_ns(ch);
 	return (printed);
 }
 
@@ -56,14 +55,10 @@ int choose_func(char ch, va_list lst, char *buffer, int *index)
  */
 int _printf(const char *format, ...)
 {
-	int printed, len, index, i;
+	int printed, len;
 	va_list lst;
-	char *buffer;
 
-	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
-	for (i = 0; i < BUFFER_SIZE; i++)
-		buffer[i] = '\0';
-	printed = 0, index = 0;
+	printed = 0;
 	va_start(lst, format);
 	if (format == NULL || *format == '\0')
 		return (-1);
@@ -71,23 +66,19 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			store_character(buffer, &index, *format);
-			/*write(1, format, 1);*/
+			write(1, format, 1);
 			printed++;
 		}
 		else
 		{
 			format++;
 			len = 0;
-			len = choose_func(*format, lst, buffer, &index);
+			len = choose_func(*format, lst);
 			if (len < 0)
 				return (-1);
 			printed += len;
 		}
 	}
-	if (index > 0)
-		print_buffer(buffer, &index);
-	free(buffer);
 	va_end(lst);
 	return (printed);
 }
