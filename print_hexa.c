@@ -20,15 +20,16 @@ char print_hc(int n, char x)
 
 /**
  * print_hexa - print hexadecimal number
- * @n: unsigned decimal number
+ * @lst: variadic list
  * @x: The specifier
  *
  * Return: count
  */
-int print_hexa(unsigned int n, char x)
+int print_hexa(va_list lst, char x)
 {
 	int i, count, j, temp;
 	char buffer[100];
+	unsigned int n = va_arg(lst, int);
 
 	i = 0, count = 0;
 	do {

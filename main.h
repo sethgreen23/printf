@@ -19,7 +19,7 @@ int print_ns(char ch);
 int print_char(va_list lst);
 int print_o(unsigned int n);
 unsigned int print_u(int n);
-int print_hexa(unsigned int n, char x);
+int print_hexa(va_list lst, char x);
 char print_hc(int n, char x);
 int print_S(va_list lst);
 int print_r(va_list lst);
