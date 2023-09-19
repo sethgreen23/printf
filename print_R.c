@@ -11,8 +11,8 @@ int print_R(va_list lst)
 	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *str = va_arg(lst, char *);
-	
-	if (str = NULL)
+
+	if (str == NULL)
 	{
 		write(1, "(null)", 6);
 		return (6);
