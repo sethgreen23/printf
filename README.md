@@ -27,4 +27,4 @@ int main(void)
 }
 ```
 ## Teck stack:
-**Server:**
+**Server:** C
