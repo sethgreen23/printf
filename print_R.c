@@ -7,7 +7,8 @@
  */
 int print_R(va_list lst)
 {
-	int i, ii, len = 0;
+	int i, len = 0;
+	char *str_clone;
 	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *str = va_arg(lst, char *);
@@ -17,14 +18,14 @@ int print_R(va_list lst)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	for (i = 0; str[i] != '\0'; i++)
+	str_clone = str;
+	for (; *str_clone != '\0'; ++str_clone)
 	{
-		for (ii = 0; ii < 54; ii++)
+		for (i = 0; input[i] != '\0'; ++i)
 		{
-			if (((str[i] <= 'z' && str[i] >= 'a') ||
-				(str[i] <= 'Z' && str[i] >= 'A')) && str[i] == input[ii])
+			if (input[i] == *str_clone)
 			{
-				str[i] = output[ii];
+				*str_clone = output[i];
 				break;
 			}
 		}
