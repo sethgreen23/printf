@@ -10,6 +10,11 @@ int print_R(va_list lst)
 	int i, len = 0;
 	char *str = va_arg(lst, char *);
 
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
