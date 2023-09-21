@@ -8,11 +8,11 @@ int main(void)
 {
 	int n;
 
-	n = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
-	printf("%d\n", n);
-	n = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
-	printf("%d\n", n);
-	n = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "");
+	n = _printf("%S", "No special character."); 
+	printf("\n%d\n", n);
+	n = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
+	printf("\n%d\n", n);
+	n = _printf("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
 	printf("%d\n", n);
 	return (0);
 }
