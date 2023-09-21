@@ -8,6 +8,7 @@
 int print_R(va_list lst)
 {
 	int i, len = 0;
+	char rot;
 	char *str = va_arg(lst, char *);
 
 	if (str == NULL)
@@ -19,22 +20,25 @@ int print_R(va_list lst)
 	{
 		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
 		{
-			putchar(str[i] + 13);
+			rot = str[i] + 13;
+			write(1, &rot, 1);
 			len++;
 		}
 		else if (str[i] >= 'n' && str[i] <= 'z')
 		{
-			putchar(str[i] - 13);
+			rot = str[i] - 13;
+			write(1, &rot, 1);
 			len++;
 		}
 		else if (str[i] >= 'N' && str[i] <= 'Z')
 		{
-			putchar(str[i] - 13);
+			rot = str[i] - 13;
+			write(1, &rot, 1);
 			len++;
 		}
 		else
 		{
-			putchar(str[i]);
+			write(1, &str[i], 1);
 			len++;
 		}
 	}

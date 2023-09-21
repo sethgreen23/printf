@@ -8,11 +8,11 @@ int main(void)
 {
 	int n;
 
-	n = _printf("%R", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-	printf("\n%d\n", n);
-	n = _printf("%R", "nopqrstuvwxyzabcdefghijklm");
-	printf("\n%d\n", n);
-	n = _printf("%R", "65123945");
-	printf("\n%d\n", n);
+	n = _printf("%R", "Guvf fragrapr vf ergevrirq sebz in_netf!\n");
+	printf("%d\n", n);
+	n = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "xabj");
+	printf("%d\n", n);
+	n = _printf("Complete the sentence: You %R nothing, Jon Snow.\n", "");
+	printf("%d\n", n);
 	return (0);
 }
